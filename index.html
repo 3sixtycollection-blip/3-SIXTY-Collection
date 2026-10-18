@@ -25,6 +25,11 @@
         .zoom-container { overflow: hidden; border-radius: 0.75rem; cursor: zoom-in; position: relative; }
         .zoom-container img { transition: transform 0.3s ease; }
         .zoom-container:hover img { transform: scale(1.8); }
+        /* Style Slider Foto */
+        .slider-container { position: relative; overflow: hidden; border-radius: 0.75rem; aspect-ratio: 4/3; background: #f1f3f5; }
+        .slider-track { display: flex; transition: transform 0.4s ease-in-out; height: 100%; }
+        .slider-item { min-width: 100%; height: 100%; }
+        .slider-item img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body class="antialiased">
@@ -51,11 +56,11 @@
             <a href="#order-section" class="bg-dark-btn text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">Pesan</a>
         </header>
 
-        <section class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(248,249,250,0.95)), url('84535.jpg');">
+        <section class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 py-16 bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(248,249,250,0.95)), url('88709_2.jpg');">
             <div class="max-w-2xl relative z-10 reveal-on-scroll">
                 <div class="inline-block bg-gray-200 border border-gray-300 text-gray-800 text-[10px] uppercase tracking-widest px-3 py-1 rounded-full mb-4 font-semibold">★ Premium T-Shirt Collection ★</div>
                 <h1 class="text-4xl md:text-6xl font-bold tracking-wide dark-gradient font-playfair mb-4">STYLISH & CONFIDENT</h1>
-                <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto font-light">Koleksi kaos eksklusif dari 3 SIXTY[span_0](start_span)[span_0](end_span). Dirancang dengan bahan katun premium yang adem, nyaman dipakai seharian, serta memiliki desain sablon modern yang estetik.</p>
+                <p class="text-gray-600 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto font-light">Koleksi kaos eksklusif dari 3 SIXTY. Dirancang dengan bahan katun premium yang adem, nyaman dipakai seharian, serta memiliki desain sablon modern yang estetik.</p>
                 <a href="#order-section" class="inline-block bg-dark-btn font-bold px-8 py-4 rounded-xl uppercase text-xs tracking-widest shadow-2xl transition hover:scale-105">HUBUNGI KAMI / PESAN</a>
             </div>
         </section>
@@ -84,77 +89,90 @@
             </div>
         </section>
 
+        <!-- Koleksi Kaos dengan Slider & Varian Cream -->
         <section class="py-16 px-4 max-w-5xl mx-auto reveal-on-scroll">
             <div class="text-center mb-10">
                 <span class="text-gray-600 uppercase tracking-widest text-xs font-semibold block mb-1">Pilihan Warna & Model</span>
-                <h2 class="text-3xl md:text-4xl font-playfair font-bold dark-gradient inline-block border-b border-gray-400 pb-2">3 SIXTY T-SHIRT COLLECTION</h2>
+                <h2 class="text-3xl md:text-4xl font-playfair font-bold dark-gradient inline-block pb-2">3 SIXTY T-SHIRT COLLECTION</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="product-card rounded-xl overflow-hidden flex flex-col cursor-pointer group" onclick="openLightbox('87495.jpg', 'Full Color Palette', 'Tersedia dalam 7 pilihan warna: Hitam, Putih, Cream, Pink, Biru Muda, Biru Dongker, Maroon', 'Apparel')">
-                    <div class="overflow-hidden relative aspect-[4/3] bg-gray-100">
-                        <img src="87495.jpg" alt="Palette" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Full Color Palette (7 Warna)</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Hitam, Putih, Cream, Pink, Biru Muda, Biru Dongker, Maroon[span_1](start_span)[span_1](end_span)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Card 1: Full Color Palette -->
+                <div class="product-card rounded-xl overflow-hidden flex flex-col">
+                    <div class="p-2 bg-gray-50">
+                        <div class="slider-container">
+                            <div class="slider-track" id="slider-1">
+                                <div class="slider-item"><img src="87495.jpg" alt="Palette"></div>
+                            </div>
                         </div>
-                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 font-playfair">Full Color Palette (7 Warna)</h3>
+                            <p class="text-xs text-gray-500 mt-1">Hitam, Putih, Cream, Pink, Biru Muda, Biru Dongker, Maroon</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-sm">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
                             <span class="text-gray-500">S - XXL</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card rounded-xl overflow-hidden flex flex-col cursor-pointer group" onclick="openLightbox('88709.jpg', 'Classic White Front', 'Tampilan depan kaos warna putih dengan logo dada minimalist eksklusif', 'Apparel')">
-                    <div class="overflow-hidden relative aspect-[4/3] bg-gray-100">
-                        <img src="88709.jpg" alt="Front" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic White - Front View</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Tampilan depan dengan logo minimalis</p>
+                <!-- Card 2: Classic White (Slider Depan & Belakang) -->
+                <div class="product-card rounded-xl overflow-hidden flex flex-col">
+                    <div class="p-2 bg-gray-50 relative">
+                        <div class="slider-container" id="container-2">
+                            <div class="slider-track" id="slider-2">
+                                <div class="slider-item"><img src="88709.jpg" alt="White Front"></div>
+                                <div class="slider-item"><img src="88712.jpg" alt="White Back"></div>
+                            </div>
                         </div>
-                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
+                        <!-- Tombol Geser Slider -->
+                        <button onclick="slidePrev(2)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full text-xs hover:bg-black">❮</button>
+                        <button onclick="slideNext(2)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full text-xs hover:bg-black">❯</button>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 font-playfair">Classic White Edition</h3>
+                            <p class="text-xs text-gray-500 mt-1">Geser untuk melihat tampilan Depan & Belakang</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-sm">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
                             <span class="text-gray-500">S - XXL</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="product-card rounded-xl overflow-hidden flex flex-col cursor-pointer group" onclick="openLightbox('88712.jpg', 'Cosmic Back Design', 'Tampilan belakang dengan sablon artistik bertema cosmic star', 'Apparel')">
-                    <div class="overflow-hidden relative aspect-[4/3] bg-gray-100">
-                        <img src="88712.jpg" alt="Back" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                    </div>
-                    <div class="p-4 flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Cosmic Design - Back View</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Sablon punggung artistik berkelas</p>
+                <!-- Card 3: Classic Cream Edition (Slider Depan & Belakang) -->
+                <div class="product-card rounded-xl overflow-hidden flex flex-col md:col-span-2 max-w-lg mx-auto w-full">
+                    <div class="p-2 bg-gray-50 relative">
+                        <div class="slider-container" id="container-3">
+                            <div class="slider-track" id="slider-3">
+                                <div class="slider-item"><img src="88715.jpg" alt="Cream Front"></div>
+                                <div class="slider-item"><img src="88722.jpg" alt="Cream Back"></div>
+                            </div>
                         </div>
-                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
+                        <!-- Tombol Geser Slider -->
+                        <button onclick="slidePrev(3)" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full text-xs hover:bg-black">❮</button>
+                        <button onclick="slideNext(3)" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full text-xs hover:bg-black">❯</button>
+                    </div>
+                    <div class="p-5 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 font-playfair">Classic Cream Edition</h3>
+                            <p class="text-xs text-gray-500 mt-1">Geser untuk melihat tampilan Depan & Belakang</p>
+                        </div>
+                        <div class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-sm">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
                             <span class="text-gray-500">S - XXL</span>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <div id="lightboxModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-md">
-            <div class="bg-white border border-gray-300 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
-                <button onclick="closeLightbox()" class="absolute top-4 right-4 text-gray-600 hover:text-black bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold z-20">&times;</button>
-                <div class="text-center">
-                    <div class="zoom-container mb-4 border border-gray-200 bg-gray-50 p-2">
-                        <img id="lightboxImg" src="" alt="Detail" class="w-full max-h-[280px] object-contain mx-auto">
-                    </div>
-                    <p class="text-[10px] text-gray-500 mb-3 uppercase tracking-wider">💡 Sentuh/arahkan kursor untuk memperbesar</p>
-                    <h3 id="lightboxTitle" class="text-xl font-playfair font-bold text-gray-900 mb-1"></h3>
-                    <p id="lightboxDesc" class="text-xs text-gray-600 mb-6"></p>
-                    <button id="lightboxOrderBtn" class="w-full bg-dark-btn font-bold py-3 rounded-xl uppercase text-xs tracking-wider shadow-lg">Pesan Model Ini ✨</button>
-                </div>
-            </div>
-        </div>
-
+        <!-- Formulir Pesanan Kaos -->
         <section class="max-w-md mx-auto px-4 py-12 mb-12 reveal-on-scroll" id="order-section">
             <div class="bg-white p-7 rounded-2xl border border-gray-200 shadow-xl relative">
                 <h2 class="text-2xl font-playfair font-bold text-center mb-6 dark-gradient">Formulir Pesanan Kaos</h2>
@@ -224,21 +242,22 @@
             });
         }
         window.addEventListener('scroll', checkScroll);
-        function openLightbox(imgSrc, title, desc) {
-            document.getElementById("lightboxImg").src = imgSrc;
-            document.getElementById("lightboxTitle").textContent = title;
-            document.getElementById("lightboxDesc").textContent = desc;
-            document.getElementById("lightboxOrderBtn").onclick = function() {
-                closeLightbox();
-                document.getElementById("order-section").scrollIntoView({ behavior: 'smooth' });
-            };
-            document.getElementById("lightboxModal").classList.remove("hidden");
-            document.getElementById("lightboxModal").classList.add("flex");
+
+        // Logika Slider Interaktif
+        const sliderIndices = { 2: 0, 3: 0 };
+        function slideNext(cardId) {
+            sliderIndices[cardId] = (sliderIndices[cardId] + 1) % 2;
+            updateSlider(cardId);
         }
-        function closeLightbox() {
-            document.getElementById("lightboxModal").classList.remove("flex");
-            document.getElementById("lightboxModal").classList.add("hidden");
+        function slidePrev(cardId) {
+            sliderIndices[cardId] = (sliderIndices[cardId] - 1 + 2) % 2;
+            updateSlider(cardId);
         }
+        function updateSlider(cardId) {
+            const track = document.getElementById(`slider-${cardId}`);
+            track.style.transform = `translateX(-${sliderIndices[cardId] * 100}%)`;
+        }
+
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nama = document.getElementById('nama').value;
