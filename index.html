@@ -23,11 +23,16 @@
         .bottom-nav a { display: flex; flex-direction: column; align-items: center; color: #6c757d; font-size: 11px; text-decoration: none; transition: color 0.3s; }
         .bottom-nav a:hover, .bottom-nav a.active { color: #212529; }
         
-        /* Ukuran Foto Diperkecil & Proporsional */
-        .slider-container { position: relative; overflow: hidden; border-radius: 0.5rem; max-width: 220px; height: 220px; margin: 0 auto; background: #f8f9fa; }
-        .slider-track { display: flex; transition: transform 0.4s ease-in-out; height: 100%; }
-        .slider-item { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-        .slider-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        /* Border menyesuaikan proporsi asli foto */
+        .slider-container { position: relative; overflow: hidden; border-radius: 0.5rem; width: fit-content; max-width: 100%; margin: 0 auto; background: #f8f9fa; cursor: pointer; }
+        .slider-track { display: flex; transition: transform 0.4s ease-in-out; }
+        .slider-item { min-width: 100%; display: flex; align-items: center; justify-content: center; }
+        .slider-item img { display: block; max-height: 260px; width: auto; max-width: 100%; object-fit: contain; border-radius: 0.5rem; }
+
+        /* Lightbox Zoom Detail */
+        .zoom-container { overflow: hidden; border-radius: 0.75rem; cursor: zoom-in; position: relative; }
+        .zoom-container img { transition: transform 0.3s ease; }
+        .zoom-container:hover img { transform: scale(1.8); }
     </style>
 </head>
 <body class="antialiased">
@@ -35,7 +40,7 @@
         <div class="text-center px-4 max-w-sm">
             <div class="relative inline-block mb-6">
                 <div class="absolute -inset-4 rounded-full bg-gradient-to-r from-gray-400 via-gray-200 to-gray-500 blur-2xl opacity-50 animate-pulse"></div>
-                <img src="89404.png" alt="Logo" class="relative w-36 h-36 mx-auto rounded-full border-2 border-gray-800 object-cover shadow-2xl">
+                <img src="84535.jpg" alt="Logo" class="relative w-36 h-36 mx-auto rounded-full border-2 border-gray-800 object-cover shadow-2xl">
             </div>
             <h1 class="text-4xl font-bold tracking-widest dark-gradient font-playfair mb-2">3 SIXTY</h1>
             <p class="text-gray-600 text-xs tracking-[0.3em] uppercase mb-8 font-medium">Official Apparel Collection</p>
@@ -48,7 +53,7 @@
     <div id="main-content" style="display: none;">
         <header class="bg-white/90 border-b border-gray-200 px-4 py-3 flex justify-between items-center sticky top-0 z-40 backdrop-blur-md">
             <div class="flex items-center gap-3">
-                <img src="89404.png" alt="Logo" class="w-10 h-10 rounded-full border border-gray-800 object-cover">
+                <img src="84535.jpg" alt="Logo" class="w-10 h-10 rounded-full border border-gray-800 object-cover">
                 <span class="font-playfair font-bold text-lg dark-gradient tracking-wider">3 SIXTY</span>
             </div>
             <a href="#order-section" class="bg-dark-btn text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">Pesan</a>
@@ -97,13 +102,18 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
                 
                 <!-- Card 1: Full Color Palette -->
-                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4">
-                    <div class="slider-container mb-3">
+                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <img src="84535.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
+                        <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
+                    </div>
+                    <div class="slider-container mb-3" onclick="openLightbox('87495.jpg', 'Full Color Palette', 'Tersedia dalam 7 pilihan warna: Hitam, Putih, Cream, Pink, Biru Muda, Biru Dongker, Maroon')">
                         <div class="slider-track" id="slider-1">
                             <div class="slider-item"><img src="87495.jpg" alt="Palette"></div>
                         </div>
                     </div>
-                    <div class="flex-grow flex flex-col justify-between text-center">
+                    <p class="text-[10px] text-gray-400 mb-2">💡 Sentuh foto untuk melihat detail</p>
+                    <div class="flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-base font-bold text-gray-900 font-playfair">Full Color Palette (7 Warna)</h3>
                             <p class="text-[11px] text-gray-500 mt-1">Hitam, Putih, Cream, Pink, Biru Muda, Biru Dongker, Maroon</p>
@@ -116,16 +126,21 @@
                 </div>
 
                 <!-- Card 2: Classic White (Slider Depan & Belakang) -->
-                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 relative">
-                    <div class="slider-container mb-3">
-                        <div class="slider-track" id="slider-2">
-                            <div class="slider-item"><img src="88709.jpg" alt="White Front"></div>
-                            <div class="slider-item"><img src="88712.jpg" alt="White Back"></div>
-                        </div>
-                        <button onclick="slidePrev(2)" class="absolute left-2 top-[35%] -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black">❮</button>
-                        <button onclick="slideNext(2)" class="absolute right-2 top-[35%] -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black">❯</button>
+                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center relative">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <img src="84535.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
+                        <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
                     </div>
-                    <div class="flex-grow flex flex-col justify-between text-center">
+                    <div class="slider-container mb-3 relative" id="wrap-2">
+                        <div class="slider-track" id="slider-2">
+                            <div class="slider-item" onclick="openLightbox(currentWhiteImg, 'Classic White Edition', 'Tampilan Kaos Edisi Putih')"><img src="88709_2.jpg" id="img-white-1" alt="White Front"></div>
+                            <div class="slider-item" onclick="openLightbox(currentWhiteImg, 'Classic White Edition', 'Tampilan Kaos Edisi Putih')"><img src="88712_2.jpg" id="img-white-2" alt="White Back"></div>
+                        </div>
+                        <button onclick="slidePrev(2)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❮</button>
+                        <button onclick="slideNext(2)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❯</button>
+                    </div>
+                    <p class="text-[10px] text-gray-400 mb-2">💡 Geser panah & sentuh foto untuk lihat detail</p>
+                    <div class="flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-base font-bold text-gray-900 font-playfair">Classic White Edition</h3>
                             <p class="text-[11px] text-gray-500 mt-1">Geser untuk lihat Depan & Belakang</p>
@@ -138,18 +153,21 @@
                 </div>
 
                 <!-- Card 3: Classic Cream Edition (Slider Depan & Belakang) -->
-                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 relative md:col-span-2 max-w-xs mx-auto w-full">
-                    <div class="slider-container mb-3">
-                        <div class="slider-container" id="slider-3-wrap" style="width:100%; height:100%; position:relative; overflow:hidden;">
-                            <div class="slider-track" id="slider-3">
-                                <div class="slider-item"><img src="88715.jpg" alt="Cream Front"></div>
-                                <div class="slider-item"><img src="88722.jpg" alt="Cream Back"></div>
-                            </div>
-                        </div>
-                        <button onclick="slidePrev(3)" class="absolute left-2 top-[35%] -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black">❮</button>
-                        <button onclick="slideNext(3)" class="absolute right-2 top-[35%] -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black">❯</button>
+                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center relative md:col-span-2 max-w-xs mx-auto w-full">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <img src="84535.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
+                        <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
                     </div>
-                    <div class="flex-grow flex flex-col justify-between text-center">
+                    <div class="slider-container mb-3 relative" id="wrap-3">
+                        <div class="slider-track" id="slider-3">
+                            <div class="slider-item" onclick="openLightbox(currentCreamImg, 'Classic Cream Edition', 'Tampilan Kaos Edisi Cream')"><img src="88715_2.jpg" id="img-cream-1" alt="Cream Front"></div>
+                            <div class="slider-item" onclick="openLightbox(currentCreamImg, 'Classic Cream Edition', 'Tampilan Kaos Edisi Cream')"><img src="88722_2.jpg" id="img-cream-2" alt="Cream Back"></div>
+                        </div>
+                        <button onclick="slidePrev(3)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❮</button>
+                        <button onclick="slideNext(3)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❯</button>
+                    </div>
+                    <p class="text-[10px] text-gray-400 mb-2">💡 Geser panah & sentuh foto untuk lihat detail</p>
+                    <div class="flex-grow flex flex-col justify-between">
                         <div>
                             <h3 class="text-base font-bold text-gray-900 font-playfair">Classic Cream Edition</h3>
                             <p class="text-[11px] text-gray-500 mt-1">Geser untuk lihat Depan & Belakang</p>
@@ -163,6 +181,22 @@
 
             </div>
         </section>
+
+        <!-- Modal Lightbox Zoom / Detail -->
+        <div id="lightboxModal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4 backdrop-blur-md">
+            <div class="bg-white border border-gray-300 rounded-2xl max-w-md w-full p-6 relative shadow-2xl">
+                <button onclick="closeLightbox()" class="absolute top-4 right-4 text-gray-600 hover:text-black bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center text-lg font-bold z-20">&times;</button>
+                <div class="text-center">
+                    <div class="zoom-container mb-4 border border-gray-200 bg-gray-50 p-2">
+                        <img id="lightboxImg" src="" alt="Detail" class="w-full max-h-[320px] object-contain mx-auto">
+                    </div>
+                    <p class="text-[10px] text-gray-500 mb-3 uppercase tracking-wider">💡 Sentuh/arahkan kursor untuk memperbesar</p>
+                    <h3 id="lightboxTitle" class="text-xl font-playfair font-bold text-gray-900 mb-1"></h3>
+                    <p id="lightboxDesc" class="text-xs text-gray-600 mb-6"></p>
+                    <button id="lightboxOrderBtn" class="w-full bg-dark-btn font-bold py-3 rounded-xl uppercase text-xs tracking-wider shadow-lg">Pesan Model Ini ✨</button>
+                </div>
+            </div>
+        </div>
 
         <!-- Formulir Pesanan Kaos -->
         <section class="max-w-md mx-auto px-4 py-12 mb-12 reveal-on-scroll" id="order-section">
@@ -236,6 +270,9 @@
         window.addEventListener('scroll', checkScroll);
 
         const sliderIndices = { 2: 0, 3: 0 };
+        let currentWhiteImg = '88709.jpg';
+        let currentCreamImg = '88715.jpg';
+
         function slideNext(cardId) {
             sliderIndices[cardId] = (sliderIndices[cardId] + 1) % 2;
             updateSlider(cardId);
@@ -247,6 +284,28 @@
         function updateSlider(cardId) {
             const track = document.getElementById(`slider-${cardId}`);
             track.style.transform = `translateX(-${sliderIndices[cardId] * 100}%)`;
+            
+            if(cardId === 2) {
+                currentWhiteImg = sliderIndices[2] === 0 ? '88709.jpg' : '88712.jpg';
+            } else if(cardId === 3) {
+                currentCreamImg = sliderIndices[3] === 0 ? '88715.jpg' : '88722.jpg';
+            }
+        }
+
+        function openLightbox(imgSrc, title, desc) {
+            document.getElementById("lightboxImg").src = imgSrc;
+            document.getElementById("lightboxTitle").textContent = title;
+            document.getElementById("lightboxDesc").textContent = desc;
+            document.getElementById("lightboxOrderBtn").onclick = function() {
+                closeLightbox();
+                document.getElementById("order-section").scrollIntoView({ behavior: 'smooth' });
+            };
+            document.getElementById("lightboxModal").classList.remove("hidden");
+            document.getElementById("lightboxModal").classList.add("flex");
+        }
+        function closeLightbox() {
+            document.getElementById("lightboxModal").classList.remove("flex");
+            document.getElementById("lightboxModal").classList.add("hidden");
         }
 
         document.getElementById('orderForm').addEventListener('submit', function(e) {
@@ -258,7 +317,7 @@
             const jumlah = document.getElementById('jumlah').value;
             const total = 85000 * jumlah;
             const textWa = `Halo 3 SIXTY, saya ingin memesan kaos:%0A%0ANama: ${nama}%0AAlamat: ${alamat}%0AWarna: ${warna}%0AUkuran: ${ukuran}%0AJumlah: ${jumlah} Pcs%0ATotal Harga: Rp ${total.toLocaleString('id-ID')}%0A%0AMohon info pembayarannya. Terima kasih!`;
-            window.open(`https://wa.me/6287766332587?text=${textWa}`, '_blank');
+            window.open(`https://wa.me/6287766334587?text=${textWa}`, '_blank');
         });
     </script>
 </body>
