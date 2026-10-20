@@ -23,10 +23,10 @@
         .bottom-nav a { display: flex; flex-direction: column; align-items: center; color: #6c757d; font-size: 11px; text-decoration: none; transition: color 0.3s; }
         .bottom-nav a:hover, .bottom-nav a.active { color: #212529; }
         
-        /* Style foto berdampingan menyamping */
+        /* Style foto grid */
         .img-container { overflow: hidden; border-radius: 0.5rem; background: #f8f9fa; cursor: pointer; transition: transform 0.3s; text-align: center; }
         .img-container:hover { transform: scale(1.03); }
-        .img-container img { width: 100%; height: 130px; object-fit: contain; display: block; margin: 0 auto; }
+        .img-container img { width: 100%; height: 110px; object-fit: contain; display: block; margin: 0 auto; }
 
         /* Lightbox Zoom Detail */
         .zoom-container { overflow: hidden; border-radius: 0.75rem; cursor: zoom-in; position: relative; }
@@ -91,7 +91,7 @@
             </div>
         </section>
 
-        <!-- Koleksi Kaos (Border Terpisah per Warna/Model & Ada Foto Orang) -->
+        <!-- Koleksi Kaos (Gabungan Classic & Detail dalam 1 Border) -->
         <section class="py-16 px-4 max-w-5xl mx-auto reveal-on-scroll">
             <div class="text-center mb-10">
                 <span class="text-gray-600 uppercase tracking-widest text-xs font-semibold block mb-1">Pilihan Warna & Model</span>
@@ -100,27 +100,31 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 
-                <!-- 1. Classic White (Foto Orang: Depan & Belakang) -->
+                <!-- 1. Classic & Putih Edition (Gabungan 3 Foto: Depan, Belakang, Detail Katalog Putih) -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
                         <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 mb-2">
-                        <div class="img-container" onclick="openLightbox('88709_2.jpg', 'Classic White - Depan', 'Tampilan depan edisi putih')">
-                            <img src="88709_2.jpg" alt="White Front">
+                    <div class="grid grid-cols-3 gap-1.5 mb-2">
+                        <div class="img-container" onclick="openLightbox('88709.jpg', 'Classic White - Depan', 'Tampilan depan edisi putih')">
+                            <img src="88709.jpg" alt="White Front">
                             <span class="text-[9px] text-gray-500 block mt-1">Depan</span>
                         </div>
-                        <div class="img-container" onclick="openLightbox('88712_2.jpg', 'Classic White - Belakang', 'Tampilan belakang edisi putih')">
-                            <img src="88712_2.jpg" alt="White Back">
+                        <div class="img-container" onclick="openLightbox('88712.jpg', 'Classic White - Belakang', 'Tampilan belakang edisi putih')">
+                            <img src="88712.jpg" alt="White Back">
                             <span class="text-[9px] text-gray-500 block mt-1">Belakang</span>
+                        </div>
+                        <div class="img-container" onclick="openLightbox('90428.jpg', 'Putih Edition', 'Detail Kaos Putih')">
+                            <img src="90428.jpg" alt="Putih Detail">
+                            <span class="text-[9px] text-gray-500 block mt-1">Detail</span>
                         </div>
                     </div>
                     <p class="text-[10px] text-gray-400 mb-2">💡 Sentuh foto untuk perbesar</p>
                     <div class="flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic White Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Tampilan Depan & Belakang</p>
+                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic & Putih Edition</h3>
+                            <p class="text-[11px] text-gray-500 mt-1">Model & Detail Katalog Warna Putih</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -129,27 +133,31 @@
                     </div>
                 </div>
 
-                <!-- 2. Classic Cream (Foto Orang: Depan & Belakang) -->
+                <!-- 2. Classic & Cream Edition (Gabungan 3 Foto: Depan, Belakang, Detail Katalog Cream) -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
                         <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 mb-2">
-                        <div class="img-container" onclick="openLightbox('88715_2.jpg', 'Classic Cream - Depan', 'Tampilan depan edisi cream')">
-                            <img src="88715_2.jpg" alt="Cream Front">
+                    <div class="grid grid-cols-3 gap-1.5 mb-2">
+                        <div class="img-container" onclick="openLightbox('88715.jpg', 'Classic Cream - Depan', 'Tampilan depan edisi cream')">
+                            <img src="88715.jpg" alt="Cream Front">
                             <span class="text-[9px] text-gray-500 block mt-1">Depan</span>
                         </div>
-                        <div class="img-container" onclick="openLightbox('88722_2.jpg', 'Classic Cream - Belakang', 'Tampilan belakang edisi cream')">
-                            <img src="88722_2.jpg" alt="Cream Back">
+                        <div class="img-container" onclick="openLightbox('88722.jpg', 'Classic Cream - Belakang', 'Tampilan belakang edisi cream')">
+                            <img src="88722.jpg" alt="Cream Back">
                             <span class="text-[9px] text-gray-500 block mt-1">Belakang</span>
                         </div>
+                        <div class="img-container" onclick="openLightbox('90431.jpg', 'Cream Edition', 'Detail Kaos Cream')">
+                            <img src="90431.jpg" alt="Cream Detail">
+                            <span class="text-[9px] text-gray-500 block mt-1">Detail</span>
+                        </div>
                     </div>
                     <p class="text-[10px] text-gray-400 mb-2">💡 Sentuh foto untuk perbesar</p>
                     <div class="flex-grow flex flex-col justify-between">
                         <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic Cream Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Tampilan Depan & Belakang</p>
+                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic & Cream Edition</h3>
+                            <p class="text-[11px] text-gray-500 mt-1">Model & Detail Katalog Warna Cream</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -158,51 +166,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Putih Katalog -->
-                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
-                    <div class="flex items-center justify-center gap-2 mb-3">
-                        <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
-                        <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
-                    </div>
-                    <div class="img-container mb-2" onclick="openLightbox('90428.jpg', 'Putih Edition', 'Detail Kaos Putih')">
-                        <img src="90428.jpg" alt="Putih">
-                    </div>
-                    <p class="text-[10px] text-gray-400 mb-2">💡 Sentuh foto untuk perbesar</p>
-                    <div class="flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Putih Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Tampilan Depan, Belakang & Detail</p>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
-                            <span class="text-gray-900 font-bold">Rp 85.000</span>
-                            <span class="text-gray-500">S - XXL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Cream Katalog -->
-                <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
-                    <div class="flex items-center justify-center gap-2 mb-3">
-                        <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
-                        <span class="text-[10px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
-                    </div>
-                    <div class="img-container mb-2" onclick="openLightbox('90431.jpg', 'Cream Edition', 'Detail Kaos Cream')">
-                        <img src="90431.jpg" alt="Cream">
-                    </div>
-                    <p class="text-[10px] text-gray-400 mb-2">💡 Sentuh foto untuk perbesar</p>
-                    <div class="flex-grow flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Cream Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-1">Tampilan Depan, Belakang & Detail</p>
-                        </div>
-                        <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
-                            <span class="text-gray-900 font-bold">Rp 85.000</span>
-                            <span class="text-gray-500">S - XXL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Biru Muda -->
+                <!-- 3. Biru Muda -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
@@ -224,7 +188,7 @@
                     </div>
                 </div>
 
-                <!-- 6. Hitam -->
+                <!-- 4. Hitam -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
@@ -246,7 +210,7 @@
                     </div>
                 </div>
 
-                <!-- 7. Biru Dongker -->
+                <!-- 5. Biru Dongker -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
@@ -268,7 +232,7 @@
                     </div>
                 </div>
 
-                <!-- 8. Maroon -->
+                <!-- 6. Maroon -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
@@ -290,7 +254,7 @@
                     </div>
                 </div>
 
-                <!-- 9. Pink -->
+                <!-- 7. Pink -->
                 <div class="product-card rounded-xl overflow-hidden flex flex-col p-4 text-center md:col-span-2 max-w-sm mx-auto w-full">
                     <div class="flex items-center justify-center gap-2 mb-3">
                         <img src="90427.jpg" alt="Logo" class="w-6 h-6 rounded-full border border-gray-400 object-cover">
