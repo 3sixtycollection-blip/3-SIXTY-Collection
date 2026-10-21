@@ -25,15 +25,15 @@
         .bottom-nav a { display: flex; flex-direction: column; align-items: center; color: #6c757d; font-size: 11px; text-decoration: none; transition: color 0.3s; }
         .bottom-nav a:hover, .bottom-nav a.active { color: #212529; }
         
-        /* Tinggi foto disesuaikan agar pas dalam 2 kolom HP */
-        .img-full-container { position: relative; width: 100%; height: 180px; background: #f8f9fa; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+        /* Container untuk menampilkan beberapa foto sekaligus langsung terlihat (Grid) */
+        .img-grid-container { display: grid; gap: 4px; padding: 4px; background: #f8f9fa; }
+        .img-grid-item { background: #ffffff; overflow: hidden; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; height: 130px; transition: opacity 0.2s; }
+        .img-grid-item:hover { opacity: 0.85; }
+        .img-grid-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+        .img-full-container { position: relative; width: 100%; height: 268px; background: #f8f9fa; overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .img-full-container img { max-width: 100%; max-height: 100%; object-fit: contain; transition: transform 0.4s ease; }
         .img-full-container:hover img { transform: scale(1.03); }
-
-        .slider-container { position: relative; width: 100%; height: 180px; overflow: hidden; background: #f8f9fa; cursor: pointer; }
-        .slider-track { display: flex; transition: transform 0.4s ease-in-out; height: 100%; }
-        .slider-item { min-width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-        .slider-item img { max-width: 100%; max-height: 100%; object-fit: contain; }
 
         .zoom-container { overflow: hidden; border-radius: 0.75rem; cursor: zoom-in; position: relative; }
         .zoom-container img { transition: transform 0.3s ease; }
@@ -73,7 +73,7 @@
             </div>
         </section>
 
-        <!-- Koleksi Kaos Lengkap (2 Border per Baris di HP & Laptop) -->
+        <!-- Koleksi Kaos Lengkap (2 Border per Baris & Semua Foto Terlihat Langsung) -->
         <section class="py-16 px-3 max-w-6xl mx-auto reveal-on-scroll">
             <div class="text-center mb-10">
                 <span class="text-gray-600 uppercase tracking-widest text-xs font-semibold block mb-1">Pilihan Warna & Model</span>
@@ -82,16 +82,18 @@
             
             <div class="grid grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
                 
-                <!-- 1. White Edition -->
+                <!-- 1. White Edition (3 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-white">
-                        <div class="slider-track" id="slider-white">
-                            <div class="slider-item" onclick="openLightbox('88709.jpg', 'White Edition - Depan', 'Tampilan Model Depan')"><img src="88709.jpg" alt="White Front"></div>
-                            <div class="slider-item" onclick="openLightbox('88712.jpg', 'White Edition - Belakang', 'Tampilan Model Belakang')"><img src="88712.jpg" alt="White Back"></div>
-                            <div class="slider-item" onclick="openLightbox('90428.jpg', 'White Edition - Katalog', 'Tampilan Detail Katalog Putih')"><img src="90428.jpg" alt="White Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('88709.jpg', 'White Edition - Depan', 'Tampilan Model Depan')">
+                            <img src="88709.jpg" alt="White Front">
                         </div>
-                        <button onclick="slidePrev('white')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('white')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('88712.jpg', 'White Edition - Belakang', 'Tampilan Model Belakang')">
+                            <img src="88712.jpg" alt="White Back">
+                        </div>
+                        <div class="img-grid-item col-span-2" onclick="openLightbox('90428.jpg', 'White Edition - Katalog', 'Tampilan Detail Katalog Putih')" style="grid-column: span 2;">
+                            <img src="90428.jpg" alt="White Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -100,7 +102,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">White Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -109,17 +111,21 @@
                     </div>
                 </div>
 
-                <!-- 2. Cream Edition -->
+                <!-- 2. Cream Edition (4 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-cream">
-                        <div class="slider-track" id="slider-cream">
-                            <div class="slider-item" onclick="openLightbox('88715.jpg', 'Cream Edition - Depan', 'Tampilan Model Depan')"><img src="88715.jpg" alt="Cream Front"></div>
-                            <div class="slider-item" onclick="openLightbox('88722.jpg', 'Cream Edition - Belakang', 'Tampilan Model Belakang')"><img src="88722.jpg" alt="Cream Back"></div>
-                            <div class="slider-item" onclick="openLightbox('90465.jpg', 'Cream Edition - Studio', 'Tampilan Model Studio')"><img src="90465.jpg" alt="Cream Studio"></div>
-                            <div class="slider-item" onclick="openLightbox('90431.jpg', 'Cream Edition - Katalog', 'Tampilan Detail Katalog Cream')"><img src="90431.jpg" alt="Cream Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('88715.jpg', 'Cream Edition - Depan', 'Tampilan Model Depan')">
+                            <img src="88715.jpg" alt="Cream Front">
                         </div>
-                        <button onclick="slidePrev('cream')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('cream')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('88722.jpg', 'Cream Edition - Belakang', 'Tampilan Model Belakang')">
+                            <img src="88722.jpg" alt="Cream Back">
+                        </div>
+                        <div class="img-grid-item" onclick="openLightbox('90465.jpg', 'Cream Edition - Studio', 'Tampilan Model Studio')">
+                            <img src="90465.jpg" alt="Cream Studio">
+                        </div>
+                        <div class="img-grid-item" onclick="openLightbox('90431.jpg', 'Cream Edition - Katalog', 'Tampilan Detail Katalog Cream')">
+                            <img src="90431.jpg" alt="Cream Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -128,7 +134,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Cream Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -137,15 +143,15 @@
                     </div>
                 </div>
 
-                <!-- 3. Hitam / Black Edition -->
+                <!-- 3. Hitam / Black Edition (2 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-black">
-                        <div class="slider-track" id="slider-black">
-                            <div class="slider-item" onclick="openLightbox('90468.jpg', 'Hitam Edition - Model', 'Tampilan Model Hitam')"><img src="90468.jpg" alt="Hitam Model"></div>
-                            <div class="slider-item" onclick="openLightbox('90429.jpg', 'Hitam Edition - Katalog', 'Tampilan Detail Katalog Hitam')"><img src="90429.jpg" alt="Hitam Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('90468.jpg', 'Hitam Edition - Model', 'Tampilan Model Hitam')">
+                            <img src="90468.jpg" alt="Hitam Model">
                         </div>
-                        <button onclick="slidePrev('black')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('black')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('90429.jpg', 'Hitam Edition - Katalog', 'Tampilan Detail Katalog Hitam')">
+                            <img src="90429.jpg" alt="Hitam Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -154,7 +160,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Hitam Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -163,15 +169,15 @@
                     </div>
                 </div>
 
-                <!-- 4. Biru Muda / Light Blue Edition -->
+                <!-- 4. Biru Muda / Light Blue Edition (2 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-lightblue">
-                        <div class="slider-track" id="slider-lightblue">
-                            <div class="slider-item" onclick="openLightbox('90456.jpg', 'Biru Muda Edition - Model', 'Tampilan Model Biru Muda')"><img src="90456.jpg" alt="Biru Muda Model"></div>
-                            <div class="slider-item" onclick="openLightbox('90430.jpg', 'Biru Muda Edition - Katalog', 'Tampilan Detail Katalog Biru Muda')"><img src="90430.jpg" alt="Biru Muda Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('90456.jpg', 'Biru Muda Edition - Model', 'Tampilan Model Biru Muda')">
+                            <img src="90456.jpg" alt="Biru Muda Model">
                         </div>
-                        <button onclick="slidePrev('lightblue')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('lightblue')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('90430.jpg', 'Biru Muda Edition - Katalog', 'Tampilan Detail Katalog Biru Muda')">
+                            <img src="90430.jpg" alt="Biru Muda Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -180,7 +186,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Biru Muda Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -189,15 +195,15 @@
                     </div>
                 </div>
 
-                <!-- 5. Maroon Edition -->
+                <!-- 5. Maroon Edition (2 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-maroon">
-                        <div class="slider-track" id="slider-maroon">
-                            <div class="slider-item" onclick="openLightbox('90450.jpg', 'Maroon Edition - Model', 'Tampilan Model Maroon')"><img src="90450.jpg" alt="Maroon Model"></div>
-                            <div class="slider-item" onclick="openLightbox('90433.jpg', 'Maroon Edition - Katalog', 'Tampilan Detail Katalog Maroon')"><img src="90433.jpg" alt="Maroon Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('90450.jpg', 'Maroon Edition - Model', 'Tampilan Model Maroon')">
+                            <img src="90450.jpg" alt="Maroon Model">
                         </div>
-                        <button onclick="slidePrev('maroon')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('maroon')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('90433.jpg', 'Maroon Edition - Katalog', 'Tampilan Detail Katalog Maroon')">
+                            <img src="90433.jpg" alt="Maroon Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -206,7 +212,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Maroon Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -215,15 +221,15 @@
                     </div>
                 </div>
 
-                <!-- 6. Biru Dongker / Navy Edition -->
+                <!-- 6. Biru Dongker / Navy Edition (2 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-navy">
-                        <div class="slider-track" id="slider-navy">
-                            <div class="slider-item" onclick="openLightbox('90453.jpg', 'Biru Dongker Edition - Model', 'Tampilan Model Biru Dongker')"><img src="90453.jpg" alt="Navy Model"></div>
-                            <div class="slider-item" onclick="openLightbox('90432.jpg', 'Biru Dongker Edition - Katalog', 'Tampilan Detail Katalog Biru Dongker')"><img src="90432.jpg" alt="Navy Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('90453.jpg', 'Biru Dongker Edition - Model', 'Tampilan Model Biru Dongker')">
+                            <img src="90453.jpg" alt="Navy Model">
                         </div>
-                        <button onclick="slidePrev('navy')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('navy')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('90432.jpg', 'Biru Dongker Edition - Katalog', 'Tampilan Detail Katalog Biru Dongker')">
+                            <img src="90432.jpg" alt="Navy Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -232,7 +238,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Biru Dongker Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -241,16 +247,18 @@
                     </div>
                 </div>
 
-                <!-- 7. Pink Edition -->
+                <!-- 7. Pink Edition (3 Foto Terlihat Langsung) -->
                 <div class="product-card">
-                    <div class="slider-container relative" id="container-pink">
-                        <div class="slider-track" id="slider-pink">
-                            <div class="slider-item" onclick="openLightbox('90459.jpg', 'Pink Edition - Model 1', 'Tampilan Model Pink 1')"><img src="90459.jpg" alt="Pink Model 1"></div>
-                            <div class="slider-item" onclick="openLightbox('90462.jpg', 'Pink Edition - Model 2', 'Tampilan Model Pink 2')"><img src="90462.jpg" alt="Pink Model 2"></div>
-                            <div class="slider-item" onclick="openLightbox('90435.png', 'Pink Edition - Katalog', 'Tampilan Detail Katalog Pink')"><img src="90435.png" alt="Pink Katalog"></div>
+                    <div class="img-grid-container" style="grid-template-columns: repeat(2, 1fr);">
+                        <div class="img-grid-item" onclick="openLightbox('90459.jpg', 'Pink Edition - Model 1', 'Tampilan Model Pink 1')">
+                            <img src="90459.jpg" alt="Pink Model 1">
                         </div>
-                        <button onclick="slidePrev('pink')" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('pink')" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/50 text-white w-6 h-6 rounded-full flex items-center justify-center text-[10px] hover:bg-black z-10">❯</button>
+                        <div class="img-grid-item" onclick="openLightbox('90462.jpg', 'Pink Edition - Model 2', 'Tampilan Model Pink 2')">
+                            <img src="90462.jpg" alt="Pink Model 2">
+                        </div>
+                        <div class="img-grid-item col-span-2" onclick="openLightbox('90435.png', 'Pink Edition - Katalog', 'Tampilan Detail Katalog Pink')" style="grid-column: span 2;">
+                            <img src="90435.png" alt="Pink Katalog">
+                        </div>
                     </div>
                     <div class="p-3.5 flex-grow flex flex-col justify-between text-center">
                         <div>
@@ -259,7 +267,7 @@
                                 <span class="text-[8px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY</span>
                             </div>
                             <h3 class="text-sm font-bold text-gray-900 font-playfair">Pink Edition</h3>
-                            <p class="text-[10px] text-gray-500 mt-0.5">Geser foto</p>
+                            <p class="text-[10px] text-gray-500 mt-0.5">Semua foto tampak jelas</p>
                         </div>
                         <div class="mt-3 pt-2 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -379,18 +387,6 @@
             });
         }
         window.addEventListener('scroll', checkScroll);
-
-        const indices = { white: 0, cream: 0, black: 0, lightblue: 0, maroon: 0, navy: 0, pink: 0 };
-        const counts = { white: 3, cream: 4, black: 2, lightblue: 2, maroon: 2, navy: 2, pink: 3 };
-
-        function slideNext(name) {
-            indices[name] = (indices[name] + 1) % counts[name];
-            document.getElementById(`slider-${name}`).style.transform = `translateX(-${indices[name] * 100}%)`;
-        }
-        function slidePrev(name) {
-            indices[name] = (indices[name] - 1 + counts[name]) % counts[name];
-            document.getElementById(`slider-${name}`).style.transform = `translateX(-${indices[name] * 100}%)`;
-        }
 
         function openLightbox(imgSrc, title, desc) {
             document.getElementById("lightboxImg").src = imgSrc;
