@@ -73,7 +73,7 @@
             </div>
         </section>
 
-        <!-- Koleksi Kaos Lengkap (Semua Model & Varian Warna Terjajar Rapi) -->
+        <!-- Koleksi Kaos Lengkap (Warna yang sama digabung ke dalam 1 Border) -->
         <section class="py-16 px-4 max-w-5xl mx-auto reveal-on-scroll">
             <div class="text-center mb-10">
                 <span class="text-gray-600 uppercase tracking-widest text-xs font-semibold block mb-1">Pilihan Warna & Model</span>
@@ -82,12 +82,13 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 
-                <!-- 1. Classic White Edition -->
+                <!-- 1. White Edition (Model Depan, Belakang & Katalog Detail Putih) -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-white">
                         <div class="slider-track" id="slider-white">
-                            <div class="slider-item" onclick="openLightbox('88709.jpg', 'Classic White - Depan', 'Tampilan depan edisi putih')"><img src="88709.jpg" alt="White Front"></div>
-                            <div class="slider-item" onclick="openLightbox('88712.jpg', 'Classic White - Belakang', 'Tampilan belakang edisi putih')"><img src="88712.jpg" alt="White Back"></div>
+                            <div class="slider-item" onclick="openLightbox('88709.jpg', 'White Edition - Depan', 'Tampilan Model Depan')"><img src="88709.jpg" alt="White Front"></div>
+                            <div class="slider-item" onclick="openLightbox('88712.jpg', 'White Edition - Belakang', 'Tampilan Model Belakang')"><img src="88712.jpg" alt="White Back"></div>
+                            <div class="slider-item" onclick="openLightbox('90428.jpg', 'White Edition - Katalog', 'Tampilan Detail Katalog Putih')"><img src="90428.jpg" alt="White Katalog"></div>
                         </div>
                         <button onclick="slidePrev('white')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❮</button>
                         <button onclick="slideNext('white')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❯</button>
@@ -98,8 +99,8 @@
                                 <img src="90427.jpg" alt="Logo" class="w-5 h-5 rounded-full border border-gray-400 object-cover">
                                 <span class="text-[9px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
                             </div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic White Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-0.5">Geser untuk melihat Depan & Belakang</p>
+                            <h3 class="text-base font-bold text-gray-900 font-playfair">White Edition</h3>
+                            <p class="text-[11px] text-gray-500 mt-0.5">Geser untuk melihat Model & Katalog Detail</p>
                         </div>
                         <div class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-xs">
                             <span class="text-gray-900 font-bold">Rp 85.000</span>
@@ -108,37 +109,13 @@
                     </div>
                 </div>
 
-                <!-- 2. Classic Cream Edition -->
-                <div class="product-card">
-                    <div class="slider-container relative" id="container-classiccream">
-                        <div class="slider-track" id="slider-classiccream">
-                            <div class="slider-item" onclick="openLightbox('88715.jpg', 'Classic Cream - Depan', 'Tampilan depan edisi cream')"><img src="88715.jpg" alt="Classic Cream Front"></div>
-                            <div class="slider-item" onclick="openLightbox('88722.jpg', 'Classic Cream - Belakang', 'Tampilan belakang edisi cream')"><img src="88722.jpg" alt="Classic Cream Back"></div>
-                        </div>
-                        <button onclick="slidePrev('classiccream')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❮</button>
-                        <button onclick="slideNext('classiccream')" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❯</button>
-                    </div>
-                    <div class="p-5 flex-grow flex flex-col justify-between text-center">
-                        <div>
-                            <div class="flex items-center justify-center gap-2 mb-1">
-                                <img src="90427.jpg" alt="Logo" class="w-5 h-5 rounded-full border border-gray-400 object-cover">
-                                <span class="text-[9px] tracking-widest uppercase font-semibold text-gray-500">3 SIXTY ORIGINAL</span>
-                            </div>
-                            <h3 class="text-base font-bold text-gray-900 font-playfair">Classic Cream Edition</h3>
-                            <p class="text-[11px] text-gray-500 mt-0.5">Geser untuk melihat Depan & Belakang</p>
-                        </div>
-                        <div class="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center text-xs">
-                            <span class="text-gray-900 font-bold">Rp 85.000</span>
-                            <span class="text-gray-500">S - XXL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Cream Edition -->
+                <!-- 2. Cream Edition (Model Depan, Belakang, Model Studio & Katalog Detail Cream) -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-cream">
                         <div class="slider-track" id="slider-cream">
-                            <div class="slider-item" onclick="openLightbox('90465.jpg', 'Cream Edition - Model', 'Tampilan Model Cream')"><img src="90465.jpg" alt="Cream Model"></div>
+                            <div class="slider-item" onclick="openLightbox('88715.jpg', 'Cream Edition - Depan', 'Tampilan Model Depan')"><img src="88715.jpg" alt="Cream Front"></div>
+                            <div class="slider-item" onclick="openLightbox('88722.jpg', 'Cream Edition - Belakang', 'Tampilan Model Belakang')"><img src="88722.jpg" alt="Cream Back"></div>
+                            <div class="slider-item" onclick="openLightbox('90465.jpg', 'Cream Edition - Studio', 'Tampilan Model Studio')"><img src="90465.jpg" alt="Cream Studio"></div>
                             <div class="slider-item" onclick="openLightbox('90431.jpg', 'Cream Edition - Katalog', 'Tampilan Detail Katalog Cream')"><img src="90431.jpg" alt="Cream Katalog"></div>
                         </div>
                         <button onclick="slidePrev('cream')" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 text-white w-7 h-7 rounded-full flex items-center justify-center text-xs hover:bg-black z-10">❮</button>
@@ -160,7 +137,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Hitam / Black Edition -->
+                <!-- 3. Hitam / Black Edition -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-black">
                         <div class="slider-track" id="slider-black">
@@ -186,7 +163,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Biru Muda / Light Blue Edition -->
+                <!-- 4. Biru Muda / Light Blue Edition -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-lightblue">
                         <div class="slider-track" id="slider-lightblue">
@@ -212,7 +189,7 @@
                     </div>
                 </div>
 
-                <!-- 6. Maroon Edition -->
+                <!-- 5. Maroon Edition -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-maroon">
                         <div class="slider-track" id="slider-maroon">
@@ -238,7 +215,7 @@
                     </div>
                 </div>
 
-                <!-- 7. Biru Dongker / Navy Edition -->
+                <!-- 6. Biru Dongker / Navy Edition -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-navy">
                         <div class="slider-track" id="slider-navy">
@@ -264,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- 8. Pink Edition -->
+                <!-- 7. Pink Edition -->
                 <div class="product-card">
                     <div class="slider-container relative" id="container-pink">
                         <div class="slider-track" id="slider-pink">
@@ -291,8 +268,8 @@
                     </div>
                 </div>
 
-                <!-- 9. Orange Edition -->
-                <div class="product-card md:col-span-2 max-w-sm mx-auto w-full">
+                <!-- 8. Orange Edition -->
+                <div class="product-card">
                     <div class="img-full-container" onclick="openLightbox('90471.jpg', 'Orange Edition', 'Tampilan Model Orange')">
                         <img src="90471.jpg" alt="Orange">
                     </div>
@@ -348,8 +325,7 @@
                         <label class="block text-xs font-semibold uppercase tracking-wider text-gray-700 mb-1.5">Pilihan Warna Kaos</label>
                         <select id="warna" required class="w-full bg-gray-50 border border-gray-300 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-black">
                             <option value="" disabled selected>-- Pilih Warna --</option>
-                            <option value="Classic White">Classic White</option>
-                            <option value="Classic Cream">Classic Cream</option>
+                            <option value="White">White</option>
                             <option value="Cream">Cream</option>
                             <option value="Hitam">Hitam</option>
                             <option value="Biru Muda">Biru Muda</option>
@@ -404,8 +380,8 @@
         }
         window.addEventListener('scroll', checkScroll);
 
-        const indices = { white: 0, classiccream: 0, cream: 0, black: 0, lightblue: 0, maroon: 0, navy: 0, pink: 0 };
-        const counts = { white: 2, classiccream: 2, cream: 2, black: 2, lightblue: 2, maroon: 2, navy: 2, pink: 3 };
+        const indices = { white: 0, cream: 0, black: 0, lightblue: 0, maroon: 0, navy: 0, pink: 0 };
+        const counts = { white: 3, cream: 4, black: 2, lightblue: 2, maroon: 2, navy: 2, pink: 3 };
 
         function slideNext(name) {
             indices[name] = (indices[name] + 1) % counts[name];
